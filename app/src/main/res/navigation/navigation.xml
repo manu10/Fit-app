@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/timerCustomizerFragment">
+
+    <fragment
+        android:id="@+id/timerCustomizerFragment"
+        android:name="com.manugarcia010.fitapp.timercustomizer.TimerCustomizerFragment"
+        android:label="timer_customizer_fragment"
+        tools:layout="@layout/timer_customizer_fragment" />
+</navigation>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Fit App</string>
+    <string name="sets_label">Sets</string>
+    <string name="customize_your_timer_label">Customize your Timer</string>
+    <string name="time_separator" translatable="false">:</string>
+    <string name="start_workout">Start Workout</string>
+</resources>

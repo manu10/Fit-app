@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.manugarcia010.fitapp.timercustomizer.TimerCustomizerViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".timercustomizer.TimerCustomizerFragment">
+
+        <TextView
+            android:id="@+id/customize_timer_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/customize_your_timer_label"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="28sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"/>
+
+
+        <com.manugarcia010.timeselectorview.UnitSelectorView
+            android:id="@+id/sets_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/customize_timer_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:label="Sets"
+            />
+        <com.manugarcia010.timeselectorview.TimeSelectorView
+            android:id="@+id/work_time_selector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sets_input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:label="Work Time"
+            />
+
+        <com.manugarcia010.timeselectorview.TimeSelectorView
+            android:id="@+id/rest_time_selector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/work_time_selector"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:label="Rest Time"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/start_workout"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

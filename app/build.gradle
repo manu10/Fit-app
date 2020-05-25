@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: "kotlin-kapt"
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.versions.sdk.compile
+    buildToolsVersion rootProject.versions.buildTools
+
+    defaultConfig {
+        applicationId "com.manugarcia010.fitapp"
+        minSdkVersion rootProject.versions.sdk.min
+        targetSdkVersion rootProject.versions.sdk.target
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    dataBinding {
+        enabled = true
+        enabledForTests = true
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:$versions.appCompat"
+    implementation "androidx.core:core-ktx:$versions.androidXCoreKtx"
+    implementation "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
+
+    // Nav components
+    implementation "android.arch.navigation:navigation-fragment-ktx:$versions.navigation"
+    implementation "android.arch.navigation:navigation-ui-ktx:$versions.navigation"
+
+    // Dagger for DI
+    implementation "com.google.dagger:dagger:$versions.dagger"
+    kapt "com.google.dagger:dagger-compiler:$versions.dagger"
+    implementation "com.google.dagger:dagger-android:$versions.dagger" //todo: upgrade it after making sure there is no compatibility issues
+    implementation "com.google.dagger:dagger-android-support:$versions.dagger"
+    kapt "com.google.dagger:dagger-android-processor:$versions.dagger"
+
+    implementation "androidx.legacy:legacy-support-v4:$versions.supportv4"
+    implementation "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle"
+    testImplementation "junit:junit:$versions.jUnit"
+    androidTestImplementation "androidx.test.ext:junit:$versions.androidXJUnit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espressoCore"
+
+    api project(':FitApp-selectorview')
+
+}

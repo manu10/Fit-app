@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/unit_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="@string/test_label"
+        android:textSize="20sp"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_decrease_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_remove_circle_black_24dp"
+        app:layout_constraintEnd_toStartOf="@id/unit_input"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/unit_input"
+        app:layout_constraintBottom_toBottomOf="@id/unit_input"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/unit_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:maxLength="2"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/unit_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_increase_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_add_circle_black_24dp"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@id/unit_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/unit_input"
+        app:layout_constraintBottom_toBottomOf="@id/unit_input"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

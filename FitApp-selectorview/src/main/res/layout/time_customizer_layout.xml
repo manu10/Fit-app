@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/time_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_decrease_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_remove_circle_black_24dp"
+        app:layout_constraintEnd_toStartOf="@id/time_minutes_input"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/time_minutes_seconds_separator"
+        app:layout_constraintBottom_toBottomOf="@id/time_minutes_seconds_separator"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/time_minutes_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_bias="0.9"
+        android:inputType="number"
+        android:maxLength="2"
+        app:layout_constraintEnd_toStartOf="@id/time_minutes_seconds_separator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/time_minutes_seconds_separator"
+        app:layout_constraintBottom_toBottomOf="@id/time_minutes_seconds_separator"
+        />
+
+    <TextView
+        android:id="@+id/time_minutes_seconds_separator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/time_separator"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/time_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:textSize="20sp"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/time_seconds_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:maxLength="2"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintTop_toTopOf="@id/time_minutes_seconds_separator"
+        app:layout_constraintBottom_toBottomOf="@id/time_minutes_seconds_separator"
+        app:layout_constraintStart_toEndOf="@id/time_minutes_seconds_separator"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_increase_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_add_circle_black_24dp"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@id/time_seconds_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/time_minutes_seconds_separator"
+        app:layout_constraintBottom_toBottomOf="@id/time_minutes_seconds_separator"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

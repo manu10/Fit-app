@@ -1,0 +1,3 @@
+rootProject.name='Fit App'
+include ':app'
+include ':FitApp-selectorview'
